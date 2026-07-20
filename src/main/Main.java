@@ -1,15 +1,21 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+package main;
+import javax.swing.JFrame;
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        JFrame window = new JFrame();
+        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        window.setResizable(false); //cant resize window
+        window.setTitle("2D Game");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        GamePanel gamePanel = new GamePanel();
+        window.add(gamePanel);
+
+        window.pack();//sized window to fit preferred size and layouts of its subcomponents
+
+        window.setLocationRelativeTo(null);//ga ada patokan posisi jadi nanti bakal di tengah
+        window.setVisible(true);
+
+        gamePanel.startGameThread();
+
     }
 }
