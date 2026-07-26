@@ -15,6 +15,7 @@ public class Main {
         window.setLocationRelativeTo(null);//ga ada patokan posisi jadi nanti bakal di tengah
         window.setVisible(true);
 
+        gamePanel.setupGame();
         gamePanel.startGameThread();
 
     }
